@@ -1,85 +1,142 @@
-/* Estilizando o fundo e centralizando o conteúdo */
-.container {
+/* Estilos globais */
+body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #1a1a2e;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
 }
 
-/* Cartão onde fica o conteúdo */
-.card {
-  background: #16213e;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+/* Container principal */
+.container {
   width: 100%;
-  max-width: 350px;
+  max-width: 500px;
+  padding: 30px;
+  background: white;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  color: white;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Aumentando o espaçamento entre os elementos */
 }
 
 /* Título */
 h2 {
-  font-size: 22px;
+  font-size: 28px;
   margin-bottom: 15px;
+  color: #1976d2;
+  font-weight: 600;
 }
 
-/* Campo de entrada */
-.input-field {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 6px;
-  border: 1px solid #4e4e50;
-  background-color: #0f3460;
-  color: white;
+/* Box de cada seção */
+.box {
+  background: #f9f9f9;
+  padding: 20px; /* Mais espaçamento interno */
+  border-radius: 10px;
+  box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Mais espaçamento entre os elementos internos */
 }
 
-/* Checkbox estilizado */
-.checkbox-group {
-  margin: 10px 0;
+/* Input de Número */
+input[type="number"] {
+  width: 100px;
+  padding: 10px;
+  font-size: 18px;
+  border: 2px solid #1976d2;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #333;
+  text-align: center;
+  margin-top: 8px;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #0d47a1;
+  background: #e3f2fd;
+}
+
+/* Estilização dos checkboxes */
+.checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px; /* Maior espaçamento entre os checkboxes */
+}
+
+label {
+  font-size: 18px;
   display: flex;
   align-items: center;
-  justify-content: left;
+  gap: 8px;
 }
 
-.checkbox-group label {
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.checkbox-group input {
-  margin-right: 8px;
-  transform: scale(1.2);
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #1976d2;
 }
 
 /* Botão estilizado */
-.generate-btn {
-  background: #e94560;
-  border: none;
+button {
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
   color: white;
-  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
   width: 100%;
   margin-top: 10px;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s;
+  box-shadow: 0px 4px 10px rgba(25, 118, 210, 0.3);
 }
 
-.generate-btn:hover {
-  background: #f05971;
+button:hover {
+  background: linear-gradient(135deg, #0d47a1, #004ba0);
+  transform: scale(1.05);
 }
 
-/* Caixa onde aparece a senha gerada */
-.password-box {
-  background: #0f3460;
-  margin-top: 15px;
-  padding: 10px;
-  border-radius: 6px;
-  font-size: 18px;
-  word-break: break-all;
+/* Exibição da senha */
+.password-container {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
   font-weight: bold;
-  color: #00adb5;
+  letter-spacing: 1px;
+  word-break: break-word;
+  text-align: center;
+  box-shadow: inset 0px 2px 5px rgba(25, 118, 210, 0.2);
+  color: #0d47a1;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .container {
+    width: 90%;
+    padding: 25px;
+  }
+
+  button {
+    font-size: 18px;
+  }
+
+  .checkbox-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  label {
+    margin: 5px 0;
+  }
 }
