@@ -1,5 +1,4 @@
 'use client';
-import styles from '../styles/PasswordGenerator.module.css';
 
 import { useState } from 'react';
 
