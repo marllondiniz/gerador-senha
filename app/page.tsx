@@ -31,7 +31,7 @@ const PasswordGenerator = () => {
     }
 
     setPassword(generatedPassword);
-    setSavedPasswords((prev) => [generatedPassword, ...prev]);
+    setSavedPasswords((prev: string[]) => [...prev, generatedPassword]);
   };
 
   return (
